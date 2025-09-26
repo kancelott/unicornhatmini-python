@@ -47,7 +47,7 @@ class UnicornHATMini():
         self._rotation = 0
 
         for device, pin, offset in self.left_matrix, self.right_matrix:
-            device.no_cs = True
+            device.no_cs = False
             device.max_speed_hz = spi_max_speed_hz
             self.xfer(device, pin, [CMD_SOFT_RESET])
             self.xfer(device, pin, [CMD_GLOBAL_BRIGHTNESS, 0x01])
